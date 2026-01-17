@@ -15,12 +15,15 @@ Instructions for AI coding assistants using OpenSpec for spec-driven development
 ## Three-Stage Workflow
 
 ### Stage 1: Creating Changes
-Create proposal when you need to:
-- Add features or functionality
-- Make breaking changes (API, schema)
-- Change architecture or patterns  
-- Optimize performance (changes behavior)
-- Update security patterns
+Create a proposal for **every** change, no exceptions:
+- New features or functionality
+- Breaking changes (API, schema)
+- Architecture or pattern changes
+- Performance or security changes
+- Bug fixes (including small fixes)
+- Typos, formatting, comments, and documentation
+- Dependency and configuration updates
+- Tests for existing behavior
 
 Triggers (examples):
 - "Help me create a change proposal"
@@ -34,11 +37,7 @@ Loose matching guidance:
 - With one of: `create`, `plan`, `make`, `start`, `help`
 
 Skip proposal for:
-- Bug fixes (restore intended behavior)
-- Typos, formatting, comments
-- Dependency updates (non-breaking)
-- Configuration changes
-- Tests for existing behavior
+- None. Every change must go through OpenSpec first.
 
 **Workflow**
 1. Review `openspec/project.md`, `openspec list`, and `openspec list --specs` to understand current context.
@@ -54,7 +53,8 @@ Track these steps as TODOs and complete them one by one.
 4. **Implement tasks sequentially** - Complete in order
 5. **Confirm completion** - Ensure every item in `tasks.md` is finished before updating statuses
 6. **Update checklist** - After all work is done, set every task to `- [x]` so the list reflects reality
-7. **Approval gate** - Do not start implementation until the proposal is reviewed and approved
+7. **Approval gate** - Do not start implementation until the proposal is reviewed and explicitly approved by the user
+8. **Post-implementation delivery** - After work completes and verification passes, automatically commit and push the code
 
 ### Stage 3: Archiving Changes
 After deployment, create separate PR to:
@@ -146,12 +146,7 @@ openspec/
 
 ```
 New request?
-├─ Bug fix restoring spec behavior? → Fix directly
-├─ Typo/format/comment? → Fix directly  
-├─ New feature/capability? → Create proposal
-├─ Breaking change? → Create proposal
-├─ Architecture change? → Create proposal
-└─ Unclear? → Create proposal (safer)
+└─ Always create a proposal first (all changes, including bug fixes and minor edits)
 ```
 
 ### Proposal Structure
