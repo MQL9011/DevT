@@ -25,6 +25,11 @@ export default function RootLayout({
                 colorPrimary: '#3b82f6',
                 borderRadius: 8,
               },
+              components: {
+                Layout: {
+                  footerBg: 'transparent',
+                },
+              },
             }}
           >
             {children}

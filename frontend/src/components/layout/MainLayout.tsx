@@ -17,7 +17,7 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
   const pathname = usePathname();
 
   return (
-    <Layout className="min-h-screen bg-[#0a0a0a]">
+    <Layout className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <header className="sticky top-0 z-50 bg-[#0a0a0a] border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -50,12 +50,12 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
         </div>
       </header>
 
-      <Layout className="bg-transparent">
-        <Content className="min-h-[calc(100vh-64px-70px)] bg-transparent">
+      <Layout style={{ background: 'transparent' }}>
+        <Content className="min-h-[calc(100vh-64px-70px)]" style={{ background: 'transparent' }}>
           {children}
         </Content>
 
-        <Footer className="bg-[#0a0a0a] border-t border-cyan-500/20 mt-20">
+        <Footer className="border-t border-cyan-500/20 mt-20" style={{ background: '#0a0a0a' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="col-span-1 md:col-span-2">

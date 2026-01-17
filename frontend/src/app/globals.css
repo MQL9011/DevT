@@ -46,3 +46,8 @@ body {
   font-size: 14px;
   line-height: 1.6;
 }
+
+/* 覆盖 Antd Layout Footer 默认背景色 */
+.ant-layout-footer {
+  background: transparent !important;
+}
