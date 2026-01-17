@@ -16,3 +16,7 @@ Use `@/openspec/AGENTS.md` to learn:
 Keep this managed block so 'openspec update' can refresh the instructions.
 
 <!-- OPENSPEC:END -->
+
+## Response Style
+- Provide the conclusion directly.
+- Do not include summaries or recaps.
