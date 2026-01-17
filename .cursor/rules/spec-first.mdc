@@ -1,0 +1,16 @@
+---
+description: OpenSpec-first workflow guard
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+你必须遵循 OpenSpec 流程。任何变更（包括 BUG 修复、UI 微调、文档修改、配置变更）都必须先创建 OpenSpec 变更提案。
+
+必须步骤：
+1) 运行 `openspec list` 与 `openspec list --specs` 了解现有变化与规格
+2) 创建 `openspec/changes/<change-id>/proposal.md` 与 `tasks.md`，并编写对应的 delta spec
+3) 运行 `openspec validate <change-id> --strict --no-interactive`
+4) 用户明确批准后，才可以修改代码或配置
+
+若用户请求改动但未批准提案，先创建/更新提案并等待批准，不得直接修改代码。

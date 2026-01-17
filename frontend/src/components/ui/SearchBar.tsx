@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search } from 'lucide-react';
+import { Search, Command } from 'lucide-react';
 
 interface SearchBarProps {
   value: string;
@@ -16,12 +16,12 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="block w-full pl-11 pr-16 py-4 bg-white/5 backdrop-blur-sm border border-solid border-cyan-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 focus:bg-white/10 transition-all shadow-xl text-base"
+        className="block w-full pl-11 pr-12 py-4 bg-white/5 backdrop-blur-sm border border-cyan-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 focus:bg-white/10 transition-all shadow-lg text-base"
         placeholder="Search for tools (e.g., 'json', 'pdf', 'converter')..."
       />
       <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 border border-solid border-cyan-500/30 rounded-md bg-cyan-500/10 text-[10px] text-cyan-400 font-mono">
-          <span className="text-xs">⌘</span> K
+        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 border border-cyan-500/30 rounded-md bg-cyan-500/10 text-xs text-cyan-400 font-mono">
+          <Command className="w-3 h-3" />K
         </kbd>
       </div>
     </div>

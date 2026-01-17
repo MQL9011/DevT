@@ -82,31 +82,31 @@ export default function Home() {
       <div className="min-h-screen bg-[#0a0a0a] text-gray-100">
         <main>
           {/* Hero Section */}
-          <div className="relative pt-32 pb-20 border-b border-solid border-cyan-500/10">
-            <div className="absolute inset-0 grid-bg opacity-40"></div>
-            <div className="relative max-w-7xl mx-auto px-6 text-center">
-              <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-8 tracking-tighter leading-[1.1]">
+          <div className="relative bg-gradient-to-b from-black via-[#0a0a0a] to-[#0a0a0a] border-b border-cyan-500/10">
+            <div className="absolute inset-0 grid-bg opacity-50"></div>
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 text-center">
+              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 tracking-tight">
                 Every developer tool you need.
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                   All in one place.
                 </span>
               </h1>
-              <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+              <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
                 A collection of free, privacy-focused utilities for developers.
                 Format JSON, encode Base64, convert images, and more. No ads, no tracking.
               </p>
               
               <SearchBar value={searchText} onChange={setSearchText} />
 
-              <div className="mt-8 flex items-center justify-center gap-4 text-xs font-semibold text-gray-500 uppercase tracking-widest">
+              <div className="mt-8 flex items-center justify-center gap-4 text-sm text-gray-500">
                 <span>Popular:</span>
                 <div className="flex gap-2">
                   {['JSON Formatter', 'PDF to JPG', 'UUID Generator'].map(tag => (
                     <button 
                       key={tag} 
                       onClick={() => setSearchText(tag)}
-                      className="px-4 py-1.5 bg-white/5 hover:bg-white/10 border border-solid border-white/10 hover:border-cyan-500/40 rounded-full transition-all text-gray-400 hover:text-cyan-400"
+                      className="px-3 py-1 bg-white/5 hover:bg-white/10 border border-cyan-500/20 hover:border-cyan-500/40 rounded-full transition-all"
                     >
                       {tag}
                     </button>
@@ -117,19 +117,22 @@ export default function Home() {
           </div>
 
           {/* Content Container */}
-          <div className="relative max-w-7xl mx-auto px-6 py-20 space-y-24">
-            <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+            <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none"></div>
 
             <CategorySection 
               title="Text & Code" 
               description="Format, validate, and manipulate text and code snippets."
             >
-              {filteredTools.map(tool => (
-                <ToolCard 
-                  key={tool.key}
-                  {...tool}
-                />
-              ))}
+              {filteredTools.map((tool) => {
+                const { key, ...toolProps } = tool;
+                return (
+                  <ToolCard 
+                    key={key}
+                    {...toolProps}
+                  />
+                );
+              })}
             </CategorySection>
             
             {filteredTools.length === 0 && (

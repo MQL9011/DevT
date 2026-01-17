@@ -61,6 +61,16 @@ npm run dev:frontend  # 前端: http://localhost:3000
 npm run dev:backend   # 后端: http://localhost:4000
 ```
 
+## OpenSpec 流程守卫
+
+本仓库启用提交前检查：当提交包含非 `openspec/` 改动且未包含 `openspec/changes/<change-id>/proposal.md` 时，会阻断提交。
+如本地钩子丢失，请重新执行：
+
+```bash
+chmod +x scripts/check-spec-proposal.sh
+chmod +x .git/hooks/pre-commit
+```
+
 ### 构建生产版本
 
 ```bash

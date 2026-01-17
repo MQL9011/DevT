@@ -1,10 +1,7 @@
 'use client';
 
 import { Layout, Typography } from 'antd';
-import {
-  GithubOutlined,
-} from '@ant-design/icons';
-import { Wrench } from 'lucide-react';
+import { Wrench, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -21,12 +18,11 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
 
   return (
     <Layout className="min-h-screen bg-[#0a0a0a]">
-      {/* 这里的 header 标签完全参考下载项目的代码结构 */}
-      <header className="sticky top-0 z-50 bg-black border-b border-solid border-cyan-500/20">
+      <header className="sticky top-0 z-50 bg-[#0a0a0a] border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="bg-gradient-to-br from-cyan-500 to-blue-600 text-white p-1.5 rounded-lg shadow-[0_0_15px_rgba(6,182,212,0.5)] flex items-center justify-center">
+              <div className="bg-gradient-to-br from-cyan-500 to-blue-600 text-white p-1.5 rounded-lg shadow-lg shadow-cyan-500/50 flex items-center justify-center">
                 <Wrench className="w-5 h-5" />
               </div>
               <span className="font-bold text-lg tracking-tight text-white">
@@ -46,19 +42,10 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
             </Link>
             <Link 
               href="#" 
-              className="ml-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all font-semibold"
+              className="ml-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all"
             >
               Submit Tool
             </Link>
-            
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-cyan-400 transition-colors ml-2"
-            >
-              <GithubOutlined className="text-xl" />
-            </a>
           </nav>
         </div>
       </header>
@@ -68,7 +55,7 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
           {children}
         </Content>
 
-        <Footer className="bg-black border-t border-solid border-cyan-500/20 mt-20">
+        <Footer className="bg-[#0a0a0a] border-t border-cyan-500/20 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="col-span-1 md:col-span-2">
@@ -108,10 +95,13 @@ export default function MainLayout({ children, hideSider = false }: MainLayoutPr
               <p className="text-sm text-gray-500">
                 © {new Date().getFullYear()} DevTools.io. All rights reserved.
               </p>
-              <div className="flex items-center gap-4 text-gray-400">
-                <Link href="#" className="hover:text-cyan-400 transition-colors">
-                  <GithubOutlined className="text-xl" />
-                </Link>
+              <div className="flex items-center gap-4">
+                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ export function CategorySection({
           {description && <p className="text-sm text-gray-400 mt-1">{description}</p>}
         </div>
         <button className="text-sm text-gray-400 hover:text-cyan-400 font-medium transition-colors">
-          查看全部
+          View all
         </button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
