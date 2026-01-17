@@ -83,6 +83,19 @@ npm run build
 npm start
 ```
 
+## 生产环境部署
+
+使用 Docker 进行生产环境部署，支持一键自动部署。详细说明请参考 [部署文档](./DEPLOYMENT.md)。
+
+### 快速部署
+
+```bash
+# 一键部署（需要 Docker 和 Docker Compose）
+./scripts/deploy.sh
+```
+
+部署脚本会自动完成环境检查、依赖安装、构建和启动等所有步骤。
+
 ## 项目结构
 
 ```

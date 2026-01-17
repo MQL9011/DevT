@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Test
+coverage/
+*.spec.ts
+
+# Environment files
+.env*
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
